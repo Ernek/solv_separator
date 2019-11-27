@@ -1,6 +1,6 @@
 
 
-def sep(N_atoms, N_snaps, N_species, d):
+def sep(N_atoms, N_snaps, N_species, d, lines):
     for j in range(int(N_species)):
         m = 0
         for i in range(N_atoms+2):
@@ -14,7 +14,7 @@ def sep(N_atoms, N_snaps, N_species, d):
  
 def get_N_atoms(fpath, fname):
     with open(fpath + fname, 'r') as file: 
-        N_atoms = int(file.readline().rstip())
+        N_atoms = int(file.readline().rstrip())
     return N_atoms
 
 def read_xyz(fpath, fname):
@@ -40,10 +40,10 @@ def write_xyz(fpath,fname, N_atoms, N_snaps, N_species, d, lines):
                 else:
                     continue
 
-def main()
+def main():
     lines = read_xyz(fpath, fname)
-    d = sep(N_atoms, N_snaps, N_species, d)
-    write_xyz(fpath, fname, N_atoms, N_snaps, N_species, d, lines) 
+    data = sep(N_atoms, N_snaps, N_species, d, lines)
+    write_xyz(fpath, fname, N_atoms, N_snaps, N_species, data, lines) 
 
 if __name__ == "__main__":
     import sys, os
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     fpath = '/Users/ernesto/Main/Codes/solv_separator/test/'
     fname = 'h3o_64w-1-MD_1000snap.xyz'
 
-    N_atoms = get_N_atoms(fpath + fname)
+    N_atoms = get_N_atoms(fpath, fname)
     print(f"There are {N_atoms} atoms in your trajectory file", "\n")
     
     print("How many snapshots to analyse ", "\n", "type: 'All' or 'An interger number' ", "\n")
