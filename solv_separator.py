@@ -1,6 +1,9 @@
 import sys, os
 
-file = open(sys.argv[1], 'r')
+fpath = '/Users/ernesto/Main/Codes/solv_separator/test'
+fname = 'h3o_64w-1-MD_1000snap.xyz'
+file = open(fpath + fname , 'r')
+
 lines = file.readlines()
 N_atoms = int(lines[0])
 print("How many snapshots to analyse ", "\n", "type: 'All' or 'An interger number' ", "\n")
