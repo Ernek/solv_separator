@@ -39,10 +39,10 @@ for j in range(N_snaps):
     for k in range(int(N_species)):
         for i in range(N_atoms+2):
             if i == 0:
-                f = open("Atom_" + d[f'atom_label_{k+1}'] + "_" + f"snap_{j+1}" +".xyz", 'w')
+                f = open(fpath + "Atom_" + d[f'atom_label_{k+1}'] + "_" + f"snap_{j+1}" +".xyz", 'w')
                 f.write(str(d[f'N_atom_label_{k+1}'])+"\n")
             elif i == 1:
-                f = open("Atom_" + d[f'atom_label_{k+1}'] + "_" + f"snap_{j+1}" +".xyz", 'a')
+                f = open(fpath + "Atom_" + d[f'atom_label_{k+1}'] + "_" + f"snap_{j+1}" +".xyz", 'a')
                 f.write(lines[j*(N_atoms+2)+1])
 #                print(lines[j*(N_atoms+2)+1])
             elif lines[i].split()[0] == str(d[f'atom_label_{k+1}']):
