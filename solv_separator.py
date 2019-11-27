@@ -24,7 +24,6 @@ def read_xyz(fpath, fname):
     return lines
 
 def write_xyz(fpath,fname, N_atoms, N_snaps, N_species, d, lines):
-    t = 0
     for j in range(N_snaps):
         for k in range(int(N_species)):
             for i in range(N_atoms+2):
