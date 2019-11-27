@@ -1,6 +1,6 @@
 import sys, os
 
-fpath = '/Users/ernesto/Main/Codes/solv_separator/test'
+fpath = '/Users/ernesto/Main/Codes/solv_separator/test/'
 fname = 'h3o_64w-1-MD_1000snap.xyz'
 file = open(fpath + fname , 'r')
 
@@ -46,12 +46,14 @@ for j in range(N_snaps):
                 f.write(lines[j*(N_atoms+2)+1])
 #                print(lines[j*(N_atoms+2)+1])
             elif lines[i].split()[0] == str(d[f'atom_label_{k+1}']):
-                f = open("Atom_" + d[f'atom_label_{k+1}'] + "_" + f"snap_{j+1}" +".xyz", 'a')
+                f = open(fpath + "Atom_" + d[f'atom_label_{k+1}'] + "_" + f"snap_{j+1}" +".xyz", 'a')
                 f.write(lines[j*(N_atoms+2)+i])
             else:
                 continue
 #                print(lines[j*(N_atoms+2)+i])
 #            t += 1  
 #    print(N_species)
+
+
 
 
